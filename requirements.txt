@@ -1,0 +1,16 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+xgboost
+scipy
+python-box
+pyyaml
+ensure
+joblib
+types-PyYAML
+Flask
+gdown
+# -e . allows us to install the local src folder as a package
+-e .

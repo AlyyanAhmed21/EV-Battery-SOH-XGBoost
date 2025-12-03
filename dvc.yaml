@@ -1,0 +1,46 @@
+stages:
+  data_ingestion:
+    cmd: python src/batteryPredictor/pipeline/stage_01_data_ingestion.py
+    deps:
+      - src/batteryPredictor/pipeline/stage_01_data_ingestion.py
+      - config/config.yaml
+      - research/data
+    outs:
+      - artifacts/data_ingestion/merged_battery_data.csv
+
+  data_transformation:
+    cmd: python src/batteryPredictor/pipeline/stage_02_data_transformation.py
+    deps:
+      - src/batteryPredictor/pipeline/stage_02_data_transformation.py
+      - config/config.yaml
+      - artifacts/data_ingestion/merged_battery_data.csv
+    outs:
+      - artifacts/data_transformation/train.csv
+      - artifacts/data_transformation/test.csv
+
+  model_trainer:
+      cmd: python src/batteryPredictor/pipeline/stage_03_model_trainer.py
+      deps:
+        - src/batteryPredictor/pipeline/stage_03_model_trainer.py
+        - config/config.yaml
+        - artifacts/data_transformation/train.csv
+        - artifacts/data_transformation/test.csv
+      params:
+        - XGBoost.n_estimators
+        - XGBoost.learning_rate
+        - XGBoost.max_depth
+      outs:
+        - artifacts/model_trainer/model_soh.pkl
+        - artifacts/model_trainer/model_capacity.pkl
+
+  model_evaluation:
+      cmd: python src/batteryPredictor/pipeline/stage_04_model_evaluation.py
+      deps:
+        - src/batteryPredictor/pipeline/stage_04_model_evaluation.py
+        - config/config.yaml
+        - artifacts/data_transformation/test.csv
+        - artifacts/model_trainer/model_soh.pkl
+        - artifacts/model_trainer/model_capacity.pkl
+      metrics:
+        - artifacts/model_evaluation/metrics.json:
+            cache: false

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analysis Dashboard</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; padding: 20px; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; text-align: center; }
+        .soh-box { background: #28a745; color: white; padding: 15px; border-radius: 10px; display: inline-block; min-width: 200px; }
+        .soh-value { font-size: 48px; font-weight: bold; }
+        .soh-label { font-size: 18px; opacity: 0.9; }
+        img { max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #ddd; }
+        .btn { display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>📊 Battery Diagnostic Report</h1>
+        <p>File Analyzed: <strong>{{ filename }}</strong></p>
+    </div>
+
+    <div class="card">
+        <h3>Estimated State of Health (SOH)</h3>
+        <div class="soh-box">
+            <div class="soh-value">{{ soh }}</div>
+            <div class="soh-label">Overall Health Score</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Physics Analysis (Voltage & Imbalance)</h3>
+        <p>Visualizing the raw data patterns used by the AI.</p>
+        <img src="data:image/png;base64, {{ plots[0] }}" alt="Voltage Analysis">
+    </div>
+
+    <div class="card">
+        <h3>Prognostic Trend (Capacity Fade)</h3>
+        <p>How the AI predicted the Remaining Range dropping over time.</p>
+        <img src="data:image/png;base64, {{ plots[1] }}" alt="Trend Analysis">
+    </div>
+
+    <div style="text-align: center;">
+        <a href="/" class="btn">Analyze Another File</a>
+    </div>
+
+</body>
+</html>

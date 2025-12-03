@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EV Battery Diagnostics</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f9; padding: 50px; text-align: center; }
+        .container { background: white; padding: 40px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        .upload-box { border: 2px dashed #007bff; padding: 30px; margin: 20px 0; border-radius: 10px; background: #f8f9fa; }
+        input[type="file"] { margin-bottom: 20px; }
+        button { padding: 12px 24px; background-color: #28a745; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
+        button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔋 EV Battery Lab AI</h1>
+        <p>Upload a discharge log (CSV) to predict SOH and Remaining Life.</p>
+        
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="upload-box">
+                <input type="file" name="file" accept=".csv" required>
+                <br>
+                <button type="submit">🚀 Run Full Diagnostics</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

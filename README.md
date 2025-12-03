@@ -1,8 +1,4 @@
-Here is a professional, industry-standard **README.md**. It highlights the R&D nature of the project, the MLOps architecture, and provides clear instructions for deployment.
 
-You can copy this raw markdown code into your `README.md` file.
-
-```markdown
 # 🔋 EV Battery SOH & Range Prognostics AI
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
@@ -143,4 +139,3 @@ We do not feed raw time-series data to the model. We extract **Physics-Informed 
 ## 📜 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-```

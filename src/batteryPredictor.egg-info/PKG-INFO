@@ -1,0 +1,15 @@
+Metadata-Version: 2.4
+Name: batteryPredictor
+Version: 0.0.1
+Summary: A python package for EV Battery SOH and Range Prediction
+Home-page: https://github.com/AlyyanAhmed21/EV-Battery-SOH-XGBoost
+Author: AlyyanAhmed21
+Author-email: alyyanawan19@example.com
+Project-URL: Bug Tracker, https://github.com/AlyyanAhmed21/EV-Battery-SOH-XGBoost/issues
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: project-url
+Dynamic: summary

@@ -1,0 +1,28 @@
+# Ignore Git and Environment folders
+.git
+.gitignore
+.github
+.dvc
+.dvcignore
+venv
+env
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+
+# Ignore Log files (we map them via volumes instead)
+logs
+
+# --- DATA EXCLUSION RULES ---
+# 1. Ignore ALL data in research/data
+research/data/*
+
+# 2. BUT... Force include the ONE file needed for the App Visualization
+# (The 'Shape Template' from Step 1 of prediction.py)
+!research/data/cell-voltage-vs-capacity-HJ3CA23041220305_779_BE_96SOH (1).csv
+
+# 3. Force include the trained models
+!artifacts/model_trainer/model_soh.pkl
+!artifacts/model_trainer/model_capacity.pkl

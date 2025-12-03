@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  battery-app:
+    build: .
+    container_name: battery_soh_container
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    volumes:
+      # Map logs for debugging
+      - ./logs:/app/logs

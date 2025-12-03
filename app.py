@@ -10,47 +10,39 @@ from batteryPredictor.pipeline.prediction import PredictionPipeline
 
 app = Flask(__name__)
 
-def generate_plots(df):
-    """Helper to create graphs for the dashboard"""
+def generate_overlay_plot(history_df, projection_df):
     img_list = []
     
-    # PLOT 1: Voltage Curve & Imbalance
-    plt.figure(figsize=(10, 5))
-    plt.subplot(1, 2, 1)
-    plt.plot(df['capacity'], df['avg_voltage'], label='Avg Voltage', color='blue')
-    plt.title("Voltage Discharge Curve")
-    plt.xlabel("Capacity Used (Ah)")
-    plt.ylabel("Voltage (V)")
-    plt.grid(True, linestyle='--', alpha=0.5)
+    plt.figure(figsize=(12, 7))
     
-    plt.subplot(1, 2, 2)
-    plt.plot(df['capacity'], df['pack_imbalance'], label='Imbalance', color='red')
-    plt.title("Cell Imbalance Trend")
-    plt.xlabel("Capacity Used (Ah)")
-    plt.ylabel("Delta V (Max - Min)")
-    plt.grid(True, linestyle='--', alpha=0.5)
+    # 1. Plot User History
+    plt.plot(history_df['capacity'], history_df['avg_voltage'], 
+             label='Actual Data (History)', color='blue', linewidth=2)
     
-    plt.tight_layout()
-    
-    # Convert plot to Base64 string
-    img = io.BytesIO()
-    plt.savefig(img, format='png')
-    img.seek(0)
-    plot_url = base64.b64encode(img.getvalue()).decode()
-    img_list.append(plot_url)
-    plt.close()
+    # 2. Plot AI Projection
+    if not projection_df.empty:
+        plt.plot(projection_df['capacity'], projection_df['avg_voltage'], 
+                 label='AI Predicted Path', color='orange', linestyle='-', linewidth=2, alpha=0.9)
+        
+        plt.fill_between(projection_df['capacity'], 
+                         projection_df['lower_bound'], 
+                         projection_df['upper_bound'], 
+                         color='orange', alpha=0.2, 
+                         label='Predicted Variability Zone')
 
-    # PLOT 2: Predicted Range vs Actual
-    plt.figure(figsize=(10, 5))
-    plt.plot(df['capacity'], df['predicted_remaining_capacity'], color='green', linewidth=2, label="AI Predicted Range")
-    plt.title("AI Range Prediction (The 'Trend of Fall')")
-    plt.xlabel("Capacity Consumed (Ah)")
-    plt.ylabel("Estimated Remaining Capacity (Ah)")
-    plt.legend()
-    plt.grid(True)
+    # Styling
+    plt.title("Live Diagnosis: Discharge Path & Variability Prediction", fontsize=14)
+    plt.xlabel("Capacity Removed (Ah)", fontsize=12)
+    plt.ylabel("Voltage (V)", fontsize=12)
+    plt.legend(loc='upper right')
+    plt.grid(True, linestyle='--', alpha=0.6)
+    
+    # --- AUTO ZOOM ---
+    # Focus Y-axis on relevant area (e.g. 4.2V down to 3.0V)
+    plt.ylim(3.0, 4.3)
     
     img = io.BytesIO()
-    plt.savefig(img, format='png')
+    plt.savefig(img, format='png', bbox_inches='tight')
     img.seek(0)
     plot_url = base64.b64encode(img.getvalue()).decode()
     img_list.append(plot_url)
@@ -77,13 +69,19 @@ def upload_analyze():
         
         # Run Pipeline
         pipeline = PredictionPipeline()
-        final_soh, result_df = pipeline.predict_bulk(data)
+        final_soh, result_df, proj_df, total_cap = pipeline.predict_bulk(data)
         
-        # Generate Graphs
-        plots = generate_plots(result_df)
+        # Generate Plot
+        plots = generate_overlay_plot(result_df, proj_df)
+        
+        # Calculate Percentage
+        current_cap = result_df['capacity'].iloc[-1]
+        percent_used = (current_cap / total_cap) * 100
         
         return render_template("dashboard.html", 
                                soh=f"{final_soh:.2f}%", 
+                               total_cap=f"{total_cap:.2f} Ah",
+                               status=f"{percent_used:.1f}% Discharged",
                                filename=file.filename,
                                plots=plots)
 

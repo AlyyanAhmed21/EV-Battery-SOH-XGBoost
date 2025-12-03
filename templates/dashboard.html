@@ -7,38 +7,45 @@
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8f9fa; padding: 20px; }
         .header { text-align: center; margin-bottom: 30px; }
         .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; text-align: center; }
-        .soh-box { background: #28a745; color: white; padding: 15px; border-radius: 10px; display: inline-block; min-width: 200px; }
-        .soh-value { font-size: 48px; font-weight: bold; }
-        .soh-label { font-size: 18px; opacity: 0.9; }
+        
+        .grid-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 800px; margin: auto; }
+        
+        .stat-box { padding: 15px; border-radius: 10px; color: white; }
+        .bg-green { background: #28a745; }
+        .bg-blue { background: #007bff; }
+        
+        .value { font-size: 36px; font-weight: bold; }
+        .label { font-size: 16px; opacity: 0.9; }
+        
         img { max-width: 100%; height: auto; border-radius: 5px; border: 1px solid #ddd; }
-        .btn { display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; }
+        .btn { display: inline-block; padding: 10px 20px; background-color: #343a40; color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; }
     </style>
 </head>
 <body>
 
     <div class="header">
         <h1>📊 Battery Diagnostic Report</h1>
-        <p>File Analyzed: <strong>{{ filename }}</strong></p>
+        <p>File: <strong>{{ filename }}</strong></p>
     </div>
 
-    <div class="card">
-        <h3>Estimated State of Health (SOH)</h3>
-        <div class="soh-box">
-            <div class="soh-value">{{ soh }}</div>
-            <div class="soh-label">Overall Health Score</div>
+    <div class="grid-container">
+        <div class="stat-box bg-green">
+            <div class="value">{{ soh }}</div>
+            <div class="label">Estimated SOH</div>
+        </div>
+        <div class="stat-box bg-blue">
+            <div class="value">{{ total_cap }}</div>
+            <div class="label">Predicted Total Range</div>
         </div>
     </div>
 
-    <div class="card">
-        <h3>Physics Analysis (Voltage & Imbalance)</h3>
-        <p>Visualizing the raw data patterns used by the AI.</p>
-        <img src="data:image/png;base64, {{ plots[0] }}" alt="Voltage Analysis">
-    </div>
+    <br>
 
     <div class="card">
-        <h3>Prognostic Trend (Capacity Fade)</h3>
-        <p>How the AI predicted the Remaining Range dropping over time.</p>
-        <img src="data:image/png;base64, {{ plots[1] }}" alt="Trend Analysis">
+        <h3>🔋 AI Trajectory Projection</h3>
+        <p><strong>Blue:</strong> Your Data | <strong>Orange:</strong> AI Predicted Future</p>
+        <p>Status: {{ status }}</p>
+        <img src="data:image/png;base64, {{ plots[0] }}" alt="Prediction Graph">
     </div>
 
     <div style="text-align: center;">

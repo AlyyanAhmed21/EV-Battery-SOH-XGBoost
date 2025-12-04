@@ -5,13 +5,13 @@ stages:
     deps:
     - path: config/config.yaml
       hash: md5
-      md5: 1eee9df05af6dbe322b3c853cfd3a697
-      size: 1020
+      md5: cb957241a03d5ec32cbd72c164c3d483
+      size: 1079
     - path: research/data
       hash: md5
-      md5: a0c668beff1232295dfdce12b93a8a7b.dir
-      size: 1629834
-      nfiles: 18
+      md5: 09f1135e188ebcc2afa7580a2f9ade45.dir
+      size: 4003864
+      nfiles: 57
     - path: src/batteryPredictor/pipeline/stage_01_data_ingestion.py
       hash: md5
       md5: e4f5dbe6a77ef199efaa4acf481d80b2
@@ -19,19 +19,19 @@ stages:
     outs:
     - path: artifacts/data_ingestion/merged_battery_data.csv
       hash: md5
-      md5: 64d9b19bda66fb3c7a5cda17972c7311
-      size: 2837284
+      md5: eab1c7e047557a376e4fd279057e1b7c
+      size: 6503511
   data_transformation:
     cmd: python src/batteryPredictor/pipeline/stage_02_data_transformation.py
     deps:
     - path: artifacts/data_ingestion/merged_battery_data.csv
       hash: md5
-      md5: 64d9b19bda66fb3c7a5cda17972c7311
-      size: 2837284
+      md5: eab1c7e047557a376e4fd279057e1b7c
+      size: 6503511
     - path: config/config.yaml
       hash: md5
-      md5: 1eee9df05af6dbe322b3c853cfd3a697
-      size: 1020
+      md5: cb957241a03d5ec32cbd72c164c3d483
+      size: 1079
     - path: src/batteryPredictor/pipeline/stage_02_data_transformation.py
       hash: md5
       md5: ced5a7b91de8a063dcc83f341094bfef
@@ -39,27 +39,27 @@ stages:
     outs:
     - path: artifacts/data_transformation/test.csv
       hash: md5
-      md5: e7099b15d028d24cdb0f3c2408518bc2
-      size: 935732
+      md5: 4c08c300ba6d9f3efdd2be7b2670ee21
+      size: 2181644
     - path: artifacts/data_transformation/train.csv
       hash: md5
-      md5: 4f09657dba9dc0eb9144a8a5e24d8c13
-      size: 2798206
+      md5: 1dfcb77b51e7ecd88444268d76fd33a1
+      size: 6546736
   model_trainer:
     cmd: python src/batteryPredictor/pipeline/stage_03_model_trainer.py
     deps:
     - path: artifacts/data_transformation/test.csv
       hash: md5
-      md5: e7099b15d028d24cdb0f3c2408518bc2
-      size: 935732
+      md5: 4c08c300ba6d9f3efdd2be7b2670ee21
+      size: 2181644
     - path: artifacts/data_transformation/train.csv
       hash: md5
-      md5: 4f09657dba9dc0eb9144a8a5e24d8c13
-      size: 2798206
+      md5: 1dfcb77b51e7ecd88444268d76fd33a1
+      size: 6546736
     - path: config/config.yaml
       hash: md5
-      md5: 1eee9df05af6dbe322b3c853cfd3a697
-      size: 1020
+      md5: cb957241a03d5ec32cbd72c164c3d483
+      size: 1079
     - path: src/batteryPredictor/pipeline/stage_03_model_trainer.py
       hash: md5
       md5: fc91f095b925b9c9b2fe9f3b8293194b
@@ -72,31 +72,31 @@ stages:
     outs:
     - path: artifacts/model_trainer/model_capacity.pkl
       hash: md5
-      md5: 0f13808e5eb6c7388458fa755937040f
-      size: 4572215
+      md5: c5d71863134fc1d6c9e2ae35a0b71ec9
+      size: 4695340
     - path: artifacts/model_trainer/model_soh.pkl
       hash: md5
-      md5: 6d8f2353ef41a11e61ab81ef40e6e3d9
-      size: 4652344
+      md5: 690fdade2df5ff2e1a6f3ca9d55e955c
+      size: 4738853
   model_evaluation:
     cmd: python src/batteryPredictor/pipeline/stage_04_model_evaluation.py
     deps:
     - path: artifacts/data_transformation/test.csv
       hash: md5
-      md5: e7099b15d028d24cdb0f3c2408518bc2
-      size: 935732
+      md5: 4c08c300ba6d9f3efdd2be7b2670ee21
+      size: 2181644
     - path: artifacts/model_trainer/model_capacity.pkl
       hash: md5
-      md5: 0f13808e5eb6c7388458fa755937040f
-      size: 4572215
+      md5: c5d71863134fc1d6c9e2ae35a0b71ec9
+      size: 4695340
     - path: artifacts/model_trainer/model_soh.pkl
       hash: md5
-      md5: 6d8f2353ef41a11e61ab81ef40e6e3d9
-      size: 4652344
+      md5: 690fdade2df5ff2e1a6f3ca9d55e955c
+      size: 4738853
     - path: config/config.yaml
       hash: md5
-      md5: 1eee9df05af6dbe322b3c853cfd3a697
-      size: 1020
+      md5: cb957241a03d5ec32cbd72c164c3d483
+      size: 1079
     - path: src/batteryPredictor/pipeline/stage_04_model_evaluation.py
       hash: md5
       md5: 466aba3a92ea8f0d113f80f540e1b035
@@ -104,5 +104,5 @@ stages:
     outs:
     - path: artifacts/model_evaluation/metrics.json
       hash: md5
-      md5: a3dff2cdeb1bdc13ceada8514958bf4a
-      size: 283
+      md5: 2c15b08411d3b0c8c88ae524bb472338
+      size: 546

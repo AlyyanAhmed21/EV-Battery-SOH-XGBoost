@@ -25,6 +25,7 @@ class ModelTrainerConfig:
 @dataclass(frozen=True)
 class ModelEvaluationConfig:
     root_dir: Path
+    train_data_path: Path
     test_data_path: Path
     model_soh_path: Path
     model_capacity_path: Path

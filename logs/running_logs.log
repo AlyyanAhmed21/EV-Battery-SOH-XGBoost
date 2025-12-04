@@ -525,3 +525,173 @@ x==========x]
  * Running on http://192.168.18.14:8080]
 [2025-12-04 11:12:54,705: INFO: _internal: [33mPress CTRL+C to quit[0m]
 [2025-12-04 11:13:01,156: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:13:01] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 11:43:26,643: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 11:43:26,643: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 11:43:36,055: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:43:36] "GET / HTTP/1.1" 200 -]
+[2025-12-04 12:00:01,477: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 12:00:01] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 12:50:28,183: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 12:50:28,184: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 12:50:29,771: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 12:50:29] "GET / HTTP/1.1" 200 -]
+[2025-12-04 12:50:55,927: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 12:50:55] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 12:51:11,061: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 12:51:11] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 12:51:38,425: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 12:51:38] "GET / HTTP/1.1" 200 -]
+[2025-12-04 12:51:50,460: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 12:51:50] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 12:51:53,403: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 12:51:53] "GET / HTTP/1.1" 200 -]
+[2025-12-04 12:52:05,212: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 12:52:05] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 13:04:04,821: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 13:04:04,821: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 13:04:10,160: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 13:04:10] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 13:04:43,458: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 13:04:43] "GET / HTTP/1.1" 200 -]
+[2025-12-04 13:04:48,383: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 13:04:48] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:05:20,520: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:05:20] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:05:43,589: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:05:43] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:05:54,156: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:05:54] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:06:11,713: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:06:11] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:11:17,401: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:11:17] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:11:32,403: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 14:11:32,403: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 14:11:34,461: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:11:34] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:11:58,924: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:11:58] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:12:31,957: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:12:31] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:12:53,374: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:12:53] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:13:10,166: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:13:10] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:13:40,073: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:13:40] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:14:08,826: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:14:08] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:14:14,341: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:14:14] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:14:25,490: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:14:25] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:14:38,139: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:14:38] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:14:53,609: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:14:53] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:18:37,620: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:18:37] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:22:47,727: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 14:22:47,727: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 14:22:49,089: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:22:49] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:22:58,106: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:22:58] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:23:03,849: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:23:03] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:23:09,407: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:23:09] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:23:33,770: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:23:33] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:30:15,020: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 14:30:15,020: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 14:30:18,424: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:30:18] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:30:24,171: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:30:24] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:30:30,338: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:30:30] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:30:38,300: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:30:38] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:31:29,983: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:31:29] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:31:38,361: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:31:38] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:32:07,946: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:32:07] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:33:48,684: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:33:48] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:34:06,601: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:34:06] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:40:20,192: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 14:40:20,192: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 14:40:21,876: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:40:21] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:40:28,165: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:40:28] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:40:37,619: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:40:37] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:40:48,352: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:40:48] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:40:56,397: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:40:56] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:41:02,134: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:41:02] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:41:06,781: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:41:06] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:41:17,247: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:41:17] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:43:12,776: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:43:12] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:43:26,336: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:43:26] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:48:02,087: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 14:48:02,087: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 14:48:04,410: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:48:04] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:48:12,933: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:48:12] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:50:23,095: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:50:23] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:50:31,763: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:50:31] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:50:51,712: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:50:51] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:51:08,949: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:51:08] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:51:33,722: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:51:33] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:51:34,348: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:51:34] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:51:53,864: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:51:53] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:52:08,770: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 14:52:08,770: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 14:52:10,140: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:52:10] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:52:28,924: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:52:28] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 14:52:38,997: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:52:38] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:52:51,258: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:52:51] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:53:03,148: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:53:03] "GET / HTTP/1.1" 200 -]
+[2025-12-04 14:53:50,276: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:53:50] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:54:10,470: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:54:10] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:54:28,569: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:54:28] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 14:55:14,852: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 14:55:14] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 15:04:03,871: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 15:04:03,871: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 15:04:05,909: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:04:05] "GET / HTTP/1.1" 200 -]
+[2025-12-04 15:04:12,628: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:04:12] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 15:04:17,893: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:04:17] "GET / HTTP/1.1" 200 -]
+[2025-12-04 15:04:26,124: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:04:26] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 15:05:20,691: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:05:20] "GET /?tab=compare HTTP/1.1" 200 -]
+[2025-12-04 15:05:27,155: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:05:27] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 15:06:14,064: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:06:14] "GET / HTTP/1.1" 200 -]
+[2025-12-04 15:06:24,721: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:06:24] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 15:06:35,507: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:06:35] "GET /?tab=compare HTTP/1.1" 200 -]
+[2025-12-04 15:07:56,566: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 15:07:56,567: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 15:07:57,803: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:07:57] "GET / HTTP/1.1" 200 -]
+[2025-12-04 15:08:00,845: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:08:00] "GET / HTTP/1.1" 200 -]
+[2025-12-04 15:08:10,412: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 15:08:10,412: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 15:08:11,529: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:08:11] "GET / HTTP/1.1" 200 -]
+[2025-12-04 15:08:17,238: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:08:17] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 15:08:21,784: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:08:21] "GET / HTTP/1.1" 200 -]
+[2025-12-04 15:08:52,217: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:08:52] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 15:08:56,439: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:08:56] "GET / HTTP/1.1" 200 -]
+[2025-12-04 15:09:04,739: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:09:04] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 15:12:24,802: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:12:24] "GET /?tab=compare HTTP/1.1" 200 -]
+[2025-12-04 15:12:31,380: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:12:31] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 15:12:36,337: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:12:36] "GET /?tab=compare HTTP/1.1" 200 -]
+[2025-12-04 15:12:44,315: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:12:44] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 15:24:47,453: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 15:24:47,453: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 15:24:49,310: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:24:49] "GET /?tab=compare HTTP/1.1" 200 -]
+[2025-12-04 15:24:50,612: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:24:50] "GET / HTTP/1.1" 200 -]
+[2025-12-04 15:25:09,778: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:25:09] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 15:25:13,822: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:25:13] "GET / HTTP/1.1" 200 -]
+[2025-12-04 15:25:22,148: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:25:22] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 15:25:27,016: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:25:27] "GET /?tab=compare HTTP/1.1" 200 -]
+[2025-12-04 15:25:36,874: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:25:36] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 15:25:45,937: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:25:45] "GET /?tab=compare HTTP/1.1" 200 -]
+[2025-12-04 15:25:56,080: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:25:56] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 15:26:04,009: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:26:04] "GET /?tab=compare HTTP/1.1" 200 -]
+[2025-12-04 15:26:12,000: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:26:12] "POST /compare HTTP/1.1" 200 -]
+[2025-12-04 15:31:20,849: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:31:20] "GET /?tab=compare HTTP/1.1" 200 -]
+[2025-12-04 15:31:47,275: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 15:31:47] "POST /compare HTTP/1.1" 200 -]

@@ -2,29 +2,163 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>EV Battery Diagnostics</title>
+    <title>BATTERY_OS // DIAGNOSTICS</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: sans-serif; background-color: #f4f4f9; padding: 50px; text-align: center; }
-        .container { background: white; padding: 40px; border-radius: 10px; max-width: 600px; margin: auto; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        h1 { color: #333; }
-        .upload-box { border: 2px dashed #007bff; padding: 30px; margin: 20px 0; border-radius: 10px; background: #f8f9fa; }
-        input[type="file"] { margin-bottom: 20px; }
-        button { padding: 12px 24px; background-color: #28a745; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; }
-        button:hover { background-color: #218838; }
+        /* THEME VARIABLES */
+        :root {
+            /* LIGHT DEFAULT */
+            --bg-core: #f4f4f9;
+            --bg-panel: #ffffff;
+            --text-main: #1a1a1a;
+            --text-dim: #555555;
+            --border-tech: #cccccc;
+            --accent-primary: #0056b3;
+            --accent-secondary: #008b99;
+            --input-bg: #e9ecef;
+        }
+        [data-theme="dark"] {
+            /* DARK MODE */
+            --bg-core: #050505;
+            --bg-panel: #0f0f0f;
+            --text-main: #e0e0e0;
+            --text-dim: #666666;
+            --border-tech: #333333;
+            --accent-primary: #ccff00;
+            --accent-secondary: #00f0ff;
+            --input-bg: rgba(255,255,255,0.02);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-core); color: var(--text-main); font-family: 'Rajdhani', sans-serif; height: 100vh; display: flex; flex-direction: column; overflow: hidden; transition: background-color 0.3s; }
+        
+        .top-bar { height: 60px; border-bottom: 1px solid var(--border-tech); display: flex; align-items: center; padding: 0 30px; justify-content: space-between; background: var(--bg-panel); }
+        .logo { font-size: 24px; font-weight: 700; color: var(--accent-primary); letter-spacing: 2px; }
+        .theme-btn { background: transparent; border: 1px solid var(--border-tech); color: var(--text-main); padding: 5px 15px; font-family: 'JetBrains Mono'; cursor: pointer; font-size: 10px; border-radius: 20px; }
+        
+        .workspace { display: flex; height: calc(100vh - 60px); }
+        .sidebar { width: 250px; border-right: 1px solid var(--border-tech); padding: 20px 0; background: var(--bg-panel); }
+        .nav-btn { background: transparent; border: none; color: var(--text-dim); padding: 15px 30px; text-align: left; font-family: 'Rajdhani', sans-serif; font-size: 18px; font-weight: 600; cursor: pointer; border-left: 3px solid transparent; display: block; width: 100%; }
+        .nav-btn.active { color: var(--text-main); background: rgba(128, 128, 128, 0.1); border-left: 3px solid var(--accent-secondary); }
+        
+        .content-panel { flex: 1; padding: 40px; overflow-y: auto; background: var(--bg-core); }
+        .tab-content { display: none; animation: fadeIn 0.4s ease forwards; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .upload-zone { border: 2px dashed var(--border-tech); border-radius: 4px; padding: 40px; text-align: center; background: var(--input-bg); position: relative; margin-bottom: 20px; transition: all 0.3s; }
+        .upload-zone:hover { border-color: var(--accent-primary); }
+        input[type="file"] { position: absolute; width: 100%; height: 100%; top: 0; left: 0; opacity: 0; cursor: pointer; }
+        .btn-action { width: 100%; padding: 15px; background: var(--accent-primary); border: none; font-family: 'JetBrains Mono'; font-weight: 700; color: var(--bg-panel); text-transform: uppercase; cursor: pointer; }
+        .split-view { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🔋 EV Battery Lab AI</h1>
-        <p>Upload a discharge log (CSV) to predict SOH and Remaining Life.</p>
-        
-        <form action="/upload" method="post" enctype="multipart/form-data">
-            <div class="upload-box">
-                <input type="file" name="file" accept=".csv" required>
-                <br>
-                <button type="submit">🚀 Run Full Diagnostics</button>
-            </div>
-        </form>
+
+    <div class="top-bar">
+        <div class="logo">BATTERY_OS</div>
+        <div><button class="theme-btn" onclick="toggleTheme()">TOGGLE THEME</button></div>
     </div>
+
+    <div class="workspace">
+        <div class="sidebar">
+            <button id="btn-single" class="nav-btn active" onclick="switchTab('single')">Single Analysis</button>
+            <button id="btn-compare" class="nav-btn" onclick="switchTab('compare')">Compare Mode</button>
+        </div>
+
+        <div class="content-panel">
+            <!-- SINGLE -->
+            <div id="single" class="tab-content active">
+                <h2 style="margin-bottom: 20px;">Single Unit Diagnostics</h2>
+                <form action="/upload" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="theme" class="theme-field">
+                    <div class="upload-zone">
+                        <div class="upload-label" style="font-family:'JetBrains Mono'; color:var(--text-dim)">DRAG CSV HERE</div>
+                        <input type="file" name="file" accept=".csv" required onchange="updateLabel(this)">
+                    </div>
+                    <button type="submit" class="btn-action">RUN DIAGNOSTICS</button>
+                </form>
+            </div>
+
+            <!-- COMPARE -->
+            <div id="compare" class="tab-content">
+                <h2 style="margin-bottom: 20px;">Differential Analysis</h2>
+                <form action="/compare" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="theme" class="theme-field">
+                    <div class="split-view">
+                        <div>
+                            <div style="font-family:'JetBrains Mono'; color:var(--accent-secondary); margin-bottom:5px;">// SOURCE A</div>
+                            <div class="upload-zone" style="height:150px; padding:50px 20px;">
+                                <div class="upload-label" style="font-family:'JetBrains Mono'; color:var(--text-dim)">SELECT FILE A</div>
+                                <input type="file" name="file1" accept=".csv" required onchange="updateLabel(this)">
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-family:'JetBrains Mono'; color:var(--accent-primary); margin-bottom:5px;">// SOURCE B</div>
+                            <div class="upload-zone" style="height:150px; padding:50px 20px;">
+                                <div class="upload-label" style="font-family:'JetBrains Mono'; color:var(--text-dim)">SELECT FILE B</div>
+                                <input type="file" name="file2" accept=".csv" required onchange="updateLabel(this)">
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-action" style="margin-top:20px;">COMPARE DATASETS</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 1. TAB LOGIC
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(el => el.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById('btn-' + tabId).classList.add('active');
+        }
+
+        // 2. FILE LABEL
+        function updateLabel(input) {
+            if (input.files && input.files[0]) {
+                let label = input.parentElement.querySelector('.upload-label');
+                label.innerHTML = "SELECTED: <b>" + input.files[0].name + "</b>";
+            }
+        }
+
+        // 3. THEME LOGIC
+        function toggleTheme() {
+            const body = document.body;
+            const newTheme = body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+            
+            if (newTheme === "dark") body.setAttribute("data-theme", "dark");
+            else body.removeAttribute("data-theme");
+            
+            localStorage.setItem("theme", newTheme);
+            syncThemeInput(); // UPDATE HIDDEN INPUTS INSTANTLY
+        }
+
+        function syncThemeInput() {
+            const currentTheme = document.body.getAttribute("data-theme") === "dark" ? "dark" : "light";
+            document.querySelectorAll('.theme-field').forEach(field => {
+                field.value = currentTheme;
+            });
+        }
+
+        // 4. INITIALIZATION (ON LOAD)
+        window.addEventListener('DOMContentLoaded', () => {
+            // Apply Theme
+            if (localStorage.getItem("theme") === "dark") {
+                document.body.setAttribute("data-theme", "dark");
+            }
+            syncThemeInput();
+
+            // Check URL for ?tab=compare
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('tab') === 'compare') {
+                switchTab('compare');
+            }
+        });
+    </script>
 </body>
 </html>

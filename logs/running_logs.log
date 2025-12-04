@@ -501,3 +501,27 @@ x==========x]
 [2025-12-04 10:49:59,205: INFO: stage_04_model_evaluation: >>>>>> stage Model Evaluation Stage completed <<<<<<
 
 x==========x]
+[2025-12-04 10:59:21,628: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 10:59:21,628: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 10:59:25,426: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 10:59:25] "GET / HTTP/1.1" 200 -]
+[2025-12-04 10:59:25,453: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 10:59:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -]
+[2025-12-04 11:06:34,916: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:06:34] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 11:06:47,042: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:06:47] "GET / HTTP/1.1" 200 -]
+[2025-12-04 11:06:54,778: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:06:54] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 11:07:37,534: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:07:37] "GET / HTTP/1.1" 200 -]
+[2025-12-04 11:07:58,206: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:07:58] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 11:08:48,794: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:08:48] "GET / HTTP/1.1" 200 -]
+[2025-12-04 11:08:56,975: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:08:56] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 11:10:13,373: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:10:13] "GET / HTTP/1.1" 200 -]
+[2025-12-04 11:10:18,511: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:10:18] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 11:10:20,504: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:10:20] "GET / HTTP/1.1" 200 -]
+[2025-12-04 11:10:24,619: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:10:24] "POST /upload HTTP/1.1" 200 -]
+[2025-12-04 11:12:54,705: INFO: _internal: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.18.14:8080]
+[2025-12-04 11:12:54,705: INFO: _internal: [33mPress CTRL+C to quit[0m]
+[2025-12-04 11:13:01,156: INFO: _internal: 127.0.0.1 - - [04/Dec/2025 11:13:01] "POST /upload HTTP/1.1" 200 -]

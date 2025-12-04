@@ -106,12 +106,18 @@ class PredictionPipeline:
                 noise_scale = 1.0 + ((100 - final_soh) / 100)
                 future_voltage_final = future_voltage_base + (noise_sample * noise_scale)
 
-                # Uncertainty Bounds
-                uncertainty_factor = (100 - final_soh) * 0.002
-                uncertainty_growth = np.linspace(1, 2.5, len(future_capacity))
+                raw_uncertainty = (100 - final_soh) * 0.002
                 
-                lower_bound = future_voltage_final - (uncertainty_factor * uncertainty_growth)
-                upper_bound = future_voltage_final + (uncertainty_factor * uncertainty_growth)
+                # CLAMP: Max uncertainty spread is limited to 0.05V
+                uncertainty_factor = min(raw_uncertainty, 0.05)
+                
+                # Make the cone grow naturally
+                uncertainty_growth = np.linspace(0.5, 1.5, len(future_capacity))
+                
+                final_uncertainty = uncertainty_factor * uncertainty_growth
+                
+                lower_bound = future_voltage_final - final_uncertainty
+                upper_bound = future_voltage_final + final_uncertainty
 
                 projection_df = pd.DataFrame({
                     'capacity': future_capacity,
